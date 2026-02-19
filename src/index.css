@@ -1,11 +1,13 @@
-/* :root {
-  
-} */
-
-/* body {
-  margin: 0;
+.nav {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-} */
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  font-size: 2em;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
