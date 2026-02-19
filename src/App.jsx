@@ -15,7 +15,7 @@ export default function App () {
       <Routes>
         <Route path="/" element={<Main/>}/>
         <Route path="/currencies" element={<Currencies/>}/>
-        <Route path="/price" element={<Price/>}/>
+        <Route path="/price/:symbol" element={<Price/>}/>
       </Routes>
     </div>
   );
