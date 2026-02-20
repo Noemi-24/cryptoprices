@@ -18,7 +18,7 @@ export default function Currencies (props) {
         const { name, symbol } = coin;
 
         return (
-          <Link to={`/price/${symbol}`}>
+          <Link to={`/price/${symbol}`} key={symbol}>
             <h2>{name}</h2>
           </Link>
         );
