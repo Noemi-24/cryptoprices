@@ -2,11 +2,13 @@ import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom"
 
 export default function Price (props) {
+  // Our api key from coingecko.com
+  const apiKey = "CG-TDhqU54CDCskomn4pbf2c3gi";
   // Grabbing the currency symbol from the URL Params.
   const params = useParams()
   const symbol = params.symbol
   // Using the other two variables to create our URL.
-  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${symbol}&vs_currencies=usd`;
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${symbol}&vs_currencies=usd&x_cg_demo_api_key=${apiKey}`;
 
   const coinNames = {
     "bitcoin": "Bitcoin",
@@ -24,11 +26,7 @@ export default function Price (props) {
   // Function to fetch coin data.
   const getCoin = async () => {
     try {
-      const response = await fetch(url,{
-        headers: {
-          "x-cg-demo-api-key": "CG-TDhqU54CDCskomn4pbf2c3gi"
-        }
-      });
+      const response = await fetch(url);
       const data = await response.json();
       setCoin(data);
     } catch(e) {
